@@ -36,6 +36,13 @@ export class GroceryList extends Component{
         // const li = event.targer; // adds listener
         // li.classList.toggle('crossed') // toggle adds class if it's not exists and deletes if it does не работает почему то
     }
+
+    deleteItem() {
+        let listArray = this.state.groceryList;
+        listArray = [];
+        this.setState({groceryList: listArray})
+    }
+
         render() {
             return (
                 <div>
@@ -55,6 +62,7 @@ export class GroceryList extends Component{
                                 {item}</li>
                         ))}
                     </ul>
+                    <button onClick={() => this.deleteItem()}>Delete</button>
 
                 </div>
 
