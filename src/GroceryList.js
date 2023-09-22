@@ -46,14 +46,14 @@ export class GroceryList extends Component{
         render() {
             return (
                 <div>
-                <div>
+                <div className="container">
                     <input type="text"
                         placeholder="Start typing..."
                         onChange={(e) => { this.onChangeEvent(e.target.value) }}
                         value={this.state.userInput } />
                     </div>
-                    <div>
-                        <button onClick={() => this.addItem(this.state.userInput)}>Add</button>
+                    <div className="container"> 
+                        <button onClick={() => this.addItem(this.state.userInput)} className="add">Add</button>
                     </div>
                     <ul>
                         {this.state.groceryList.map((item, index) => ( // get access to list with the map we get acess to each item in the list
@@ -62,8 +62,9 @@ export class GroceryList extends Component{
                                 {item}</li>
                         ))}
                     </ul>
-                    <button onClick={() => this.deleteItem()}>Delete</button>
-
+                <div className="container">
+                    <button onClick={() => this.deleteItem()} className="btnDelete">Delete</button>
+                    </div>
                 </div>
 
             )
