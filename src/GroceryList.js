@@ -1,4 +1,5 @@
 import { Component } from "react";
+import iconCheck from './iconCheck.png'
 
 export class GroceryList extends Component{
     constructor() {
@@ -16,10 +17,15 @@ export class GroceryList extends Component{
     }
 
     addItem(input) {
-        let listArray = this.state.groceryList;
-        listArray.push(input);
-        this.setState({groceryList: listArray, userInput: ''}) // to empty input
-    
+
+        if (input === '') {
+            alert("Please add an item")
+        } else {
+
+            let listArray = this.state.groceryList;
+            listArray.push(input);
+            this.setState({ groceryList: listArray, userInput: '' }) // to empty input
+        }
     }
 
     crossedItem(event) {
@@ -44,7 +50,9 @@ export class GroceryList extends Component{
                     </div>
                     <ul>
                         {this.state.groceryList.map((item, index) => ( // get access to list with the map we get acess to each item in the list
-                            <li onClick={this.crossedItem} key={index}>{item}</li>
+                            <li onClick={this.crossedItem} key={index}>
+                                <img src = {iconCheck} />
+                                {item}</li>
                         ))}
                     </ul>
 
