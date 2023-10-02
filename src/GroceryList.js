@@ -21,7 +21,7 @@ export class GroceryList extends Component {
     } else {
       let listArray = this.state.groceryList;
       listArray.push(input);
-      this.setState({ groceryList: listArray, userInput: "" }); // to empty input
+      this.setState({ groceryList: listArray, userInput: "" }); 
     }
   }
 
