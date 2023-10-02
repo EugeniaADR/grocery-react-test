@@ -28,9 +28,6 @@ export class GroceryList extends Component {
   crossedItem(event) {
     const crossItem = event.target;
     crossItem.classList.toggle("crossed");
-
-    // const li = event.targer; // adds listener
-    // li.classList.toggle('crossed') // toggle adds class if it's not exists and deletes if it does не работает почему то
   }
 
   deleteItem() {
